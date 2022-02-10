@@ -1,0 +1,149 @@
+$min-color: #e6d938;
+$button-color: #b7ac20 ; 
+$min-color-2: #088081;
+$button-color-2: #00a2a3 ; 
+$text-color : #015354 ;
+$hover-button: $min-color ; 
+$light-bg: #d3d3d4 ; 
+$black-color: #343434 ; 
+$white: #fff ; 
+$bg-app : #f5ffff ; 
+
+
+//font
+
+@font-face {
+    font-family: Tajawal;
+    src: url("../fonts/Tajawal/Tajawal-Regular.ttf");
+}
+
+
+body{
+    font-family: Tajawal , sans-serif !important;
+    background-color: $white !important;
+    font-size: 16pt !important;
+    a{
+        text-decoration: none;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}
+
+//classes
+
+.about-us > .title , .sections > .title  , .screen-app > .title{
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    padding-right: 100px;
+    margin-bottom: 100px;
+    font-size: 35px;
+    font-weight: bold;
+    color: $min-color-2;
+    .shape{
+        position: absolute;
+        top: 58px;
+        right: 127px;
+        content: "";
+        width: 50px;
+        height: 9px;
+        background-color: $min-color;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        &::after{
+            position: absolute;
+            content: "";
+            right: -25px;
+            width: 100px;
+            height: 2.5px;
+            top: 3px;
+            background-color: $min-color;
+        }
+    }
+}
+.active{
+    background-color: $min-color !important;
+}
+%buttons{
+    .buttons{
+        .btn{
+            box-shadow: none;
+            border: none;
+            background-image: linear-gradient($button-color, $min-color);
+            color: $white;
+            font-size: 16pt;
+            width: 190px;
+            padding: 5px 10px;
+            border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -ms-border-radius: 7px;
+            -o-border-radius: 7px;
+            transition: all 300ms ease;
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -ms-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            img{
+                width: 20px;
+                margin-right: 5px;
+                margin-top: 0;
+            }
+            &:hover{
+                filter: brightness(90%);
+                -webkit-filter: brightness(90%);
+            }
+        }
+        .android{
+            padding-block: 6.5px;
+            margin-right: 50px;
+        }
+    }
+}
+%buttons-2{
+    .buttons{
+        .btn{
+            box-shadow: none;
+            border: none;
+            background-image: linear-gradient($button-color-2, $min-color-2);
+            color: $white;
+            font-size: 16pt;
+            width: 190px;
+            padding: 5px 10px;
+            border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -ms-border-radius: 7px;
+            -o-border-radius: 7px;
+            transition: all 300ms ease;
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -ms-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            img{
+                width: 20px;
+                margin-right: 5px;
+                margin-top: 0;
+            }
+            &:hover{
+                filter: brightness(90%);
+                -webkit-filter: brightness(90%);
+            }
+        }
+        .android{
+            padding-block: 6.5px;
+            margin-right: 50px;
+        }
+    }
+}
+%bg-img{
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size:cover !important;
+}
