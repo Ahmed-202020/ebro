@@ -78,7 +78,7 @@ html , body{
                             top: 78px;
                             left: 22px;
                             content: "";
-                            background-color: $light-bg;
+                            background-color: $button-color-2;
                             width: 80%;
                             height: 1px;
                         }
@@ -133,11 +133,22 @@ html , body{
     }
 }
 .about-us{
-    padding: 350px 0 0;
-    padding-top: 350px;
+    // padding: 350px 0 0;
+    padding-top: 220px;
     @extend %bg-img ; 
     .title{
         margin-bottom: 0;
+        .shape{
+            top: 58px;
+            right: 127px;
+            width: 50px;
+            &::after{
+                right: -25px;
+                width: 100px;
+                height: 2.5px;
+                top: 3px;
+            }
+        }
     }
     .show-case{
         padding-inline: 100px ;
@@ -148,45 +159,45 @@ html , body{
             font-size: 16pt;
             margin-top: 100px;
             color: $black-color;
-            padding-inline: 12px;
+            padding-left: 40px;
             .text-1{
                 margin-bottom: 40px;
             }
         }
         .image{
             width: 100%;
-            img{
-            }
         }
     }
 }
 .features{
     position: relative;
-    @extend %bg-img ; 
-    height: 570px;
+    padding: 50px 0 150px ; 
     .overlay{
+        background-image: url("../images/features\ bg\ ebro.png") ; 
+        @extend %bg-img ; 
+        height: 300px;
         position: absolute;
-        top: 0;
+        top: 300px;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 100px 0 0 0;
-        .title{
-            text-align: center;
-            color: $white;
-            font-size: 22pt;
-            margin-bottom: 25px;
-        }
-        .col-img{
-            img{
-                width: 120%;
-            }
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .show-case{
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(427px , 1fr));
+        justify-content: center;
+        align-items: center;
+        padding-inline: 100px;
+        margin-top: 640px;
+        gap: 20px ;
         .feature{
             display: flex;
             align-items: center;
             .image{
-                background: $white;
+                background-image: linear-gradient($button-color-2 , $min-color-2);
                 width: 95px;
                 height: 95px;
                 padding: 10px 15px;
@@ -194,89 +205,88 @@ html , body{
                 align-items: center;
                 justify-content: center;
                 line-height: 95px;
-                border-radius: 15px;
-                -webkit-border-radius: 15px;
-                -moz-border-radius: 15px;
-                -ms-border-radius: 15px;
-                -o-border-radius: 15px;
-            }
-            .price , .delivery{
-                background-color: $min-color;
+                border-radius: 25px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                -ms-border-radius: 25px;
+                -o-border-radius: 25px;
             }
             .content{
                 margin-right: 20px;
                 margin-bottom: 20px;
-                color: $white;
                 .title{
-                    font-size: 16pt;
+                    font-size: 20pt;
                     font-weight: bold;
                     text-align: start;
+                    color: $text-color;
                     margin-bottom: 15px;
                 }
+                .text{
+                    font-size: 14pt;
+                    color: $min-color-2;
+                }
             }
-            .custom-content , .custom-title{
-                color: $black-color;
+            &:nth-child(even){
+                justify-content: flex-end;
+                .image{
+                    background-image: linear-gradient($button-color , $min-color);
+                }
             }
-        }
-        .feature + .feature{
-            margin-top: 25px;
+            &:first-child(){
+                .image{
+                    img{
+                        width: 50px;
+                    }
+                }
+            }
+            &:nth-child(2){
+                .image{
+                    img{
+                        width: 40px;
+                    }
+                }
+            }
+            &:nth-child(3){
+                .image{
+                    img{
+                        width: 70px;
+                    }
+                }
+            }
+            &:last-child(){
+                .image{
+                    img{
+                        width: 55px;
+                    }
+                }
+            }
         }
     }
 }
 .sections{
-    padding : 500px 0 250px;
-    @extend %bg-img ; 
-    .show-case{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-inline: 100px;
-        .sub{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
-            .title{
-                color: $black-color;
-                font-weight: bold;
-            }
-            .text{
-                color: $black-color;
-                font-size: 18pt;
-            }
+    background-color: $bg-app;
+    padding: 100px 0 150px;
+    .title{
+        margin-bottom: 120px;
+        .shape{
+            right: 138px;
         }
-        .products{
-            display: grid;
-            grid-template-columns: repeat(auto-fill , minmax(250px , 1fr)) ;
-            gap: 50px;
-            width: 80%;
-            .product{
-                .card{
-                    padding: 5px 5px 0;
-                    border-radius:8px;
-                    -webkit-border-radius:8px;
-                    -moz-border-radius:8px;
-                    -ms-border-radius:8px;
-                    -o-border-radius:8px;
-                    box-shadow:  0 0 5px #ccc;
-                    img{
-                        width: 100%;
-                    }
-                    .card-body{
-                        color: $black-color;
-                        font-size: 14pt;
-                        text-align: center;
-                    }
-                }
+    }
+    .show-case{
+        padding-inline: 100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(500px , 1fr));
+        gap: 50px;
+        .section{
+            img{
+                width: 100%;
             }
         }
     }
 }
 .screen-app{
     position: relative;
-    padding: 100px 0px 150px 0px;
+    padding: 200px 0px 150px 0px;
     background: #FFFFFF;
     .screen-img{
         position: absolute;

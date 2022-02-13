@@ -34,7 +34,7 @@ body{
 
 //classes
 
-.about-us > .title , .sections > .title  , .screen-app > .title{
+.about-us > .title , .features> .title ,  .sections > .title  , .screen-app > .title{
     position: relative;
     display: flex;
     justify-content:flex-start;
@@ -44,11 +44,11 @@ body{
     font-weight: bold;
     color: $min-color-2;
     .shape{
-        position: absolute;
-        top: 58px;
-        right: 127px;
         content: "";
-        width: 50px;
+        position: absolute;
+        top: 65px;
+        right: 160px;
+        width: 100px;
         height: 9px;
         background-color: $min-color;
         border-radius: 10px;
@@ -59,11 +59,11 @@ body{
         &::after{
             position: absolute;
             content: "";
-            right: -25px;
-            width: 100px;
+            right: -49px;
+            width: 200px;
+            background-color: $min-color;
             height: 2.5px;
             top: 3px;
-            background-color: $min-color;
         }
     }
 }
