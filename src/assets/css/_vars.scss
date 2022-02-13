@@ -67,6 +67,21 @@ body{
         }
     }
 }
+html[dir = "ltr"]{
+    .about-us > .title , .features> .title ,  .sections > .title  , .screen-app > .title{
+        padding-right: 0;
+        padding-left: 100px;
+        .shape{
+            right: initial;
+            left: 160px;
+            width: 100px;
+            &::after{
+                left: -49px;
+                right: initial;
+            }
+        }
+    }
+}
 .active{
     background-color: $min-color !important;
 }

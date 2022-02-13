@@ -59,6 +59,22 @@ body ul {
   top: 3px;
 }
 
+html[dir="ltr"] .about-us > .title, html[dir="ltr"] .features > .title, html[dir="ltr"] .sections > .title, html[dir="ltr"] .screen-app > .title {
+  padding-right: 0;
+  padding-left: 100px;
+}
+
+html[dir="ltr"] .about-us > .title .shape, html[dir="ltr"] .features > .title .shape, html[dir="ltr"] .sections > .title .shape, html[dir="ltr"] .screen-app > .title .shape {
+  right: initial;
+  left: 160px;
+  width: 100px;
+}
+
+html[dir="ltr"] .about-us > .title .shape::after, html[dir="ltr"] .features > .title .shape::after, html[dir="ltr"] .sections > .title .shape::after, html[dir="ltr"] .screen-app > .title .shape::after {
+  left: -49px;
+  right: initial;
+}
+
 .active {
   background-color: #e6d938 !important;
 }
@@ -156,16 +172,19 @@ html, body {
 
 .header .navbar {
   z-index: 10000;
-  padding: 35px 122px 0 85px;
+  padding: 50px 122px 0 85px;
   margin-bottom: 160px;
 }
 
 .header .navbar .navbar-brand {
-  width: 100px;
+  position: relative;
+  width: 180px;
   margin-left: 0;
 }
 
 .header .navbar .navbar-brand img {
+  position: absolute;
+  top: -40px;
   width: 100%;
 }
 
@@ -268,15 +287,16 @@ html, body {
 }
 
 .header .overlay .caption .title h3 {
-  font-size: 25pt;
+  font-size: 30pt;
+  font-weight: bold;
   color: #015354;
   font-weight: bold;
 }
 
 .header .overlay .caption .text {
-  font-size: 18pt;
+  font-size: 19pt;
   color: #015354;
-  padding-left: 0;
+  padding-left: 20px;
   margin-bottom: 145px;
 }
 
@@ -286,17 +306,9 @@ html, body {
 
 .header .overlay .mob {
   position: relative;
-}
-
-.header .overlay .mob img {
-  position: absolute;
-  height: 990px;
-  width: 80%;
-  transform: matrix(3, 0, 0, 1, -260, -350);
-  -moz-transform: matrix(3, 0, 0, 1, -260, -350);
-  -ms-transform: matrix(3, 0, 0, 1, -260, -350);
-  -o-transform: matrix(3, 0, 0, 1, -260, -350);
-  -webkit-transform: matrix(3, 0, 0, 1, -260, -350);
+  top: -100px;
+  left: -104px;
+  overflow-x: hidden;
 }
 
 .about-us {
@@ -648,8 +660,21 @@ html, body {
   margin-top: 35px;
 }
 
+html[dir="ltr"] .header {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
 html[dir="ltr"] .header .navbar {
-  padding: 35px 110px 0 122px;
+  padding: 50px 85px 0 122px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 html[dir="ltr"] .header .navbar .navbar-brand {
@@ -678,18 +703,22 @@ html[dir="ltr"] .header .navbar .navbar-collapse .navbar-nav .dropdown .ar::afte
 }
 
 html[dir="ltr"] .header .overlay {
-  padding-right: 0;
-  padding-left: 35px;
+  padding-right: 130;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 html[dir="ltr"] .header .overlay .caption {
-  padding-left: 55px;
+  padding-left: 80px;
   padding-right: 0;
 }
 
 html[dir="ltr"] .header .overlay .caption .text {
   padding-left: 0;
-  padding-right: 145px;
+  padding-right: 20px;
 }
 
 html[dir="ltr"] .header .overlay .caption .buttons .android {
@@ -697,30 +726,30 @@ html[dir="ltr"] .header .overlay .caption .buttons .android {
   margin-left: 30px;
 }
 
-html[dir="ltr"] .about-us .title::before, html[dir="ltr"] .about-us .title::after {
+html[dir="ltr"] .header .overlay .mob {
+  right: 45;
   left: initial;
-  right: 70px;
 }
 
-html[dir="ltr"] .about-us .title::after {
+html[dir="ltr"] .about-us .title .shape {
+  left: 127px;
   right: initial;
-  left: 70px;
+  width: 50px;
 }
 
-html[dir="ltr"] .about-us .show-case .offset-2 {
-  margin-right: 0;
-  margin-left: 8.33333333%;
+html[dir="ltr"] .about-us .title .shape::after {
+  left: -25px;
+  right: initial;
 }
 
-html[dir="ltr"] .about-us .show-case .image img {
-  left: initial;
-  right: 200px;
-  top: -150px;
-}
-
-html[dir="ltr"] .features .overlay .feature .content {
+html[dir="ltr"] .features .show-case .feature .content {
   margin-right: 0;
   margin-left: 20px;
+}
+
+html[dir="ltr"] .sections .title .shape {
+  right: initial;
+  left: 138px;
 }
 
 html[dir="ltr"] .app .buttons .android {

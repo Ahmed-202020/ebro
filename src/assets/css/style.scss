@@ -6,16 +6,19 @@ html , body{
 //rtl
 .header{
     background-image: url("../images/ebro\ header.png");
-    @extend %bg-img ; 
+    @extend%bg-img ;
     height: 95vh;
     .navbar{
         z-index: 10000;
-        padding: 35px 122px 0 85px ; 
+        padding: 50px 122px 0 85px ; 
         margin-bottom: 160px;
         .navbar-brand{
-            width: 100px ; 
+            position: relative;
+            width: 180px ; 
             margin-left: 0;
             img{
+                position: absolute;
+                top: -40px;
                 width: 100%;
             }
         }
@@ -99,15 +102,16 @@ html , body{
             .title{
                 margin-bottom: 12px;
                 h3{
-                    font-size: 25pt;
+                    font-size: 30pt;
+                    font-weight: bold;
                     color: $text-color;
                     font-weight: bold;
                 }
             }
             .text{
-                font-size: 18pt;
+                font-size: 19pt;
                 color: $text-color;
-                padding-left: 0;
+                padding-left: 20px;
                 margin-bottom: 145px;
             }
             @extend %buttons ; 
@@ -119,21 +123,15 @@ html , body{
         }
         .mob{
             position: relative;
+            top: -100px;
+            left: -104px;
+            overflow-x: hidden;
             img{
-                position: absolute;
-                height: 990px;
-                width: 80%;
-                transform: matrix(3, 0, 0, 1, -260, -350) ;
-                -moz-transform: matrix(3, 0, 0, 1, -260, -350) ;
-                -ms-transform: matrix(3, 0, 0, 1, -260, -350) ;
-                -o-transform: matrix(3, 0, 0, 1, -260, -350) ;
-                -webkit-transform: matrix(3, 0, 0, 1, -260, -350) ;
             }
         }
     }
 }
 .about-us{
-    // padding: 350px 0 0;
     padding-top: 220px;
     @extend %bg-img ; 
     .title{
@@ -419,8 +417,18 @@ html , body{
 //ltr
 html[dir = "ltr"]{
     .header{
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
         .navbar{
-            padding: 35px 110px 0 122px ; 
+            padding: 50px 85px 0 122px ; 
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
             .navbar-brand{
                 margin-left: 0;
                 margin-right: 0;
@@ -451,14 +459,18 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            padding-right: 0 ; 
-            padding-left: 35px;
+            padding-right: 130 ; 
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
             .caption{
-                padding-left: 55px;
+                padding-left: 80px;
                 padding-right: 0;
                 .text{
                     padding-left: 0;
-                    padding-right: 145px;
+                    padding-right: 20px;
                 }
                 .buttons{
                     .android{
@@ -467,40 +479,40 @@ html[dir = "ltr"]{
                     }
                 }
             }
+            .mob{
+                right: 45;
+                left: initial;
+            }
         }
     }
     .about-us{ 
         .title{
-            &::before ,&::after {
-                left: initial;
-                right: 70px;
-            }
-            &::after {
-                right:  initial;
-                left: 70px;
-            }
-        }
-        .show-case{
-            .offset-2{
-                margin-right: 0;
-                margin-left: 8.33333333%;
-            }
-            .image{
-                img{
-                    left: initial;
-                    right: 200px;
-                    top: -150px;
+            .shape{
+                left: 127px;
+                right: initial;
+                width: 50px;
+                &::after{
+                    left: -25px;
+                    right: initial;
                 }
             }
         }
     }
     .features{
-        .overlay{
+        .show-case{
             .feature{
                 .content{
                     margin-right: 0;
                     margin-left: 20px;
                 }
+            }
+        }
+    }
+    .sections{
+        .title{
+            .shape{
+                right: initial;
+                left: 138px;
             }
         }
     }
