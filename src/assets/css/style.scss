@@ -5,9 +5,10 @@ html , body{
 }
 //rtl
 .header{
+    position: relative;
     background-image: url("../images/ebro\ header.png");
     @extend%bg-img ;
-    height: 95vh;
+    height: 100vh;
     .navbar{
         z-index: 10000;
         padding: 50px 122px 0 85px ; 
@@ -91,14 +92,12 @@ html , body{
         }
     }
     .overlay{
+        width: 100%;
         z-index: 1;
         position: absolute;
         display: flex;
-        padding-right: 35px ; 
         top: 265px;
         .caption{
-            margin-bottom: 0px;
-            padding-right: 80px;
             .title{
                 margin-bottom: 12px;
                 h3{
@@ -111,8 +110,8 @@ html , body{
             .text{
                 font-size: 19pt;
                 color: $text-color;
-                padding-left: 20px;
-                margin-bottom: 145px;
+                padding-left: 180px;
+                margin-bottom: 163px;
             }
             @extend %buttons ; 
             .buttons{
@@ -121,12 +120,21 @@ html , body{
                 }
             }
         }
-        .mob{
-            position: relative;
-            top: -100px;
-            left: -104px;
-            overflow-x: hidden;
+        .image{
+            position: absolute;
+            width: 35%;
+            left: 10%;
+            top: 40%;
             img{
+                object-fit: none;
+                display: block;
+                max-width: 100%;
+                height: auto;
+                transform: rotateY(-25deg);
+                -webkit-transform: rotateY(-25deg);
+                -moz-transform: rotateY(-25deg);
+                -ms-transform: rotateY(-25deg);
+                -o-transform: rotateY(-25deg);
             }
         }
     }
@@ -459,19 +467,18 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            padding-right: 130 ; 
+            width: 100%;
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             -moz-transform: rotateY(180deg);
             -ms-transform: rotateY(180deg);
             -o-transform: rotateY(180deg);
             .caption{
-                padding-left: 80px;
-                padding-right: 0;
                 .text{
                     padding-left: 0;
-                    padding-right: 20px;
+                    padding-right: 180px;
                 }
+                @extend %buttons ; 
                 .buttons{
                     .android{
                         margin-right: 0;
@@ -479,9 +486,9 @@ html[dir = "ltr"]{
                     }
                 }
             }
-            .mob{
-                right: 45;
+            .image{
                 left: initial;
+                right: 10%;
             }
         }
     }
@@ -543,7 +550,6 @@ html[dir = "ltr"]{
 
 @media (max-width: 1399.98px){
     .header{
-        height: 106vh;
         .navbar{
             padding: 35px 107px 0 77px;
             margin-bottom: 100px;
@@ -556,30 +562,31 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
+            top: 150px;
             .caption{
+                margin-top: 68px;
                 .title{
                     h3{
                         font-size: 21pt;
                     }
                 }
                 .text{
-                    padding-left: 55px;
+                    padding-left: 100px;
+                    margin-bottom: 132px;
                 }
             }
-            .mob{
-                img{
-                    width: 53%;
-                    transform: matrix(3, 0, 0, 1, 38, -270);
-                    -webkit-transform: matrix(3, 0, 0, 1, 38, -270);
-                    -moz-transform: matrix(3, 0, 0, 1, 38, -270);
-                    -ms-transform: matrix(3, 0, 0, 1, 38, -270);
-                    -o-transform: matrix(3, 0, 0, 1, 38, -270);
-                }
+            .image{
+                width: 37%;
             }
         }
     }
-    .features{
-        height: 500px;
+    .about-us{
+        .title{
+            padding-right: 120px;
+            .shape{
+                right: 150px;
+            }
+        }
     }
     .screen-app{
         .screen-img{
@@ -591,7 +598,6 @@ html[dir = "ltr"]{
 }
 @media (max-width: 1280.98px){
     .header{
-        height: 98vh;
         .navbar{
             padding: 35px 90px 0 70px ; 
             .navbar-nav{
@@ -599,20 +605,8 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            padding-right: 98px;
-            .caption{
-                padding-right: 25px;
-            }
-            .mob{
-                img{
-                    width: 48%;
-                    height: 835px;
-                    transform: matrix(3, 0, 0, 1, 100, -260);
-                    -webkit-transform: matrix(3, 0, 0, 1, 100, -260);
-                    -moz-transform: matrix(3, 0, 0, 1, 100, -260);
-                    -ms-transform: matrix(3, 0, 0, 1, 100, -260);
-                    -o-transform: matrix(3, 0, 0, 1, 100, -260);
-                }
+            .image{
+                width: 41%;
             }
         }
     }
@@ -621,47 +615,53 @@ html[dir = "ltr"]{
             width: 30%;
         }
     }
+    .about-us{
+        .title{
+            padding-right: 100px;
+            .shape{
+                right: 130px;
+            }
+        }
+        .show-case{
+            .image{
+                position: relative;
+                left: 70px;
+            }
+        }
+    }
 }
 @media (max-width: 1199.98px){
     .header{
-        height: 97vh;
         .navbar{
             padding: 35px 55px 0 28px ;
+            .navbar-brand{
+                width: 130px;
+            }
             .navbar-nav{
                 margin-right: 45px !important;
             }
         }
         .overlay{
-            padding-right: 60px;
             .caption{
-                padding-right: 10px;
-                .title{
-                    h3{
-                        font-size: 19pt;
-                    }
-                }
                 .text{
-                    padding-left: 5px;
-                    font-size: 15pt;
+                    font-size: 18pt;
+                    padding-left: 30px;
                 }
             }
-            .mob{
-                img{
-                    transform:matrix(3, 0, 0, 1, -17, -232);
-                    -webkit-transform:matrix(3, 0, 0, 1, -17, -232);
-                    -moz-transform:matrix(3, 0, 0, 1, -17, -232);
-                    -ms-transform:matrix(3, 0, 0, 1, -17, -232);
-                    -o-transform:matrix(3, 0, 0, 1, -17, -232);
-                    height: 800px;
-                    width: 53%;
-                }
+            .image{
+                width: 44%;
+                left: 5%;
             }
         }
     }
-    .features{
-        height: 450px;
-        .overlay{
-            padding: 65px 0 0 0;
+    .about-us{
+        .show-case{
+            .text{
+                padding-left: 0;
+            }
+            img{
+                width: 850px;
+            }
         }
     }
     .screen-app{
@@ -671,74 +671,53 @@ html[dir = "ltr"]{
             height: 392px;
         }
     }
+    .footer{
+        margin-top: -5px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1025px){
     .header{
-        height: 82vh;
         .navbar{
             padding: 35px 53px 0 28px ; 
             margin-bottom: 75px;
-            .navbar-brand{
-                width: 80px;
-            }
         }
         .overlay{
-            padding-right: 50px;
-            .caption{
-                padding-right: 3px;
-                .text{
-                    margin-bottom: 25px;
-                    padding-left: 15pt;
-                }
+            .image{
+                width: 50%;
             }
-            .mob{
-                img{
-                    transform: matrix(2, 0, 0, 1, 87, -210);
-                    -moz-transform: matrix(2, 0, 0, 1, 87, -210);
-                    -ms-transform: matrix(2, 0, 0, 1, 87, -210);
-                    -o-transform: matrix(2, 0, 0, 1, 87, -210);
-                    -webkit-transform: matrix(2, 0, 0, 1, 87, -210);
-                    width: 68%;
-                    height: 700px;
-                }
-            }
-        }
-    }
-    .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        font-size: 30px !important; 
-        &::before  , &::after{
-            top: 35px !important;
         }
     }
     .about-us{
+        .title{
+            padding-right: 60px;
+            .shape{
+                right: 85px;
+            }
+        }
         .show-case{
-            padding-left: 110px;
-            padding-right: 50px;
+            padding-inline: 60px;
+            img{
+                width: 775px;
+            }
         }
     }
     .features{
-        height: 450px;
-        .overlay{
-            .container{
-                padding-inline: 0;
-            }
-            .title{
-                margin-bottom: 50px;
-            }
+        .show-case{
+            margin-top: 700px;
         }
     }
 } 
 @media (max-width: 991.98px){
     .header{
-        height: 75vh;
         .navbar{
             padding-right: 27px;
             padding-left: 27px;
             position: relative;
             .navbar-brand{
                 position: absolute;
-                right: 30%;
-                top: 25px;
+                width: 110px;
+                right: 40%;
+                top: 62px;
             }
             .navbar-toggler{
                 color: transparent;
@@ -794,22 +773,11 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            top: 200px;
-            padding-right: 85px;
+            left: 45px;
             .caption{
-                padding-right: 0;
-                .title{
-                    h3{
-                        font-size:15pt;
-                    }
-                }
-                .text{
-                    font-size: 14pt;
-                    margin-bottom: 35px;
-                }
                 .buttons{
                     .btn{
-                        font-size: 14px;
+                        font-size: 14pt;
                         width: 145px;
                     }
                     .android{
@@ -817,75 +785,17 @@ html[dir = "ltr"]{
                     }
                 }
             }
-            .mob{
-                img{
-                    transform:matrix(2, 0, 0, 1, -15, -220);
-                    -moz-transform:matrix(2, 0, 0, 1, -15, -220);
-                    -ms-transform:matrix(2, 0, 0, 1, -15, -220);
-                    -o-transform:matrix(2, 0, 0, 1, -15, -220);
-                    -webkit-transform:matrix(2, 0, 0, 1, -15, -220);
-                    height: 630px;
-                    width: 92%;
-                }
-            }
-        }
-    }
-    .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        font-size: 30px !important; 
-        &::before  , &::after{
-            top: 35px !important;
-        }
-    }
-    .about-us{
-        .title{
-            margin-bottom: 70px;
-        }
-        .show-case{
-            .text{
-                font-size: 14pt;
-                margin-top: 50px;
-            }
             .image{
-                width: 700px;
-                img{
-                    left: 155px;
-                    top: -63px !important;
-                }
+                width: 52%;
+                left: 0;
             }
         }
     }
     .features{
-        height: 450px;
         .overlay{
-            .title{
-                margin-bottom: 40px;
-            }
-            .feature{
-                .image{
-                    width: 80px;
-                    height: 80px;
-                    img{
-                        width: 35px;
-                    }
-                }
-                .sofa{
-                    img{
-                        width: 42px;
-                    }
-                }
-                .price{
-                    img{
-                        width: 38px;
-                    }
-                }
-                .delivery{
-                    img{
-                        width: 45px;
-                    }
-                }
-            }
-            .feature + .feature{
-                margin-top: 12px;
+            height: 230px;
+            img{
+                height: 650px;
             }
         }
     }
@@ -904,12 +814,9 @@ html[dir = "ltr"]{
 }
 @media (max-width: 768px){
     .header{
-        height: 58vh;
         .navbar{
             .navbar-brand{
-                right: 35%;
-                width: 80px;
-                top: 30px;
+                right: 28%;
             }
             .navbar-nav{
                 .dropdown{
@@ -924,77 +831,41 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            padding-right: 30px;
+            left: -20px;
             .caption{
-                padding-left: 0;
-                margin-right: 35px;
-                margin-top: 15px;
-                .title{
-                    margin-bottom: 8px;
-                    margin-top: -53px;
-                    h3{
-                        font-size: 13pt;
-                        font-weight: 800;
-                    }
-                }
-                .text{
-                    margin-bottom: 12px;
-                    font-size: 12pt;
-                }
                 .buttons{
                     .btn{
-                        width: 124px;
+                        width: 150px;
                     }
                     .android{
                         margin-right: 5px;
                     }
                 }
             }
-            .mob{
-                img{
-                    height: 440px !important;
-                    width: 125% !important;
-                    transform:matrix(1, 0, 0, 1, 45, -160);
-                    -webkit-transform:matrix(1, 0, 0, 1, 45, -160);
-                    -moz-transform:matrix(1, 0, 0, 1, 45, -160);
-                    -ms-transform:matrix(1, 0, 0, 1, 45, -160);
-                    -o-transform:matrix(1, 0, 0, 1, 45, -160);
-                }
+            .image{
+                width: 67%;
+                top: 53%;
+                left:0%;
             }
-        }
-    }
-    .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        &::before  , &::after{
-            width: 25%;
         }
     }
     .about-us{
-        padding-top: 250px;
-        .offset-2{
-          margin-right: 6.666667% ; 
-        }
+        padding-bottom: 120px;
         .show-case{
-            .image{
-                width: 600px;
-                img{
-                    left: 130px;
-                }
-            }
-            .text{
-                font-size: 12pt;
-                padding-inline : 0;
+            img{
+                width: 700px;
             }
         }
     }
     .features{
-        height: 415px;
-        .overlay{
+        .show-case{
             .feature{
+                justify-content: center;
                 .content{
-                    font-size: 13pt;
-                    .title{
-                        margin-bottom: 10px;
-                    }
+                    width: 400px;
+                }
+                &:nth-child(even){
+                    justify-content: center;
                 }
             }
         }
@@ -1006,71 +877,25 @@ html[dir = "ltr"]{
 @media (max-width: 767.98px){
     .header{
         .overlay{
+            left: 70px;
             .caption{
-                margin-top: 5px;
-                margin-right: 20px;
-                .title{
-                    h3{
-                        font-size: 14pt;
-                    }
-                }
                 .text{
-                    font-size: 10pt;
+                    font-size: 14pt;
                 }
                 .buttons{
                     .btn{
-                        width: 105px;
+                        width: 140px;
                         span{
-                            font-size: 10pt;
+                            font-size: 13pt;
                         }
                         img{
-                            width: 10px;
+                            width: 20px;
                         }
                     }
                 }
             }
-            .mob{
-                img{
-                    width: 160% !important;
-                    transform:   matrix(1, 0, 0, 1, -50, -155) !important;
-                    -webkit-transform:   matrix(1, 0, 0, 1, -50, -155) !important;
-                    -moz-transform:   matrix(1, 0, 0, 1, -50, -155) !important;
-                    -ms-transform:   matrix(1, 0, 0, 1, -50, -155) !important;
-                    -o-transform:   matrix(1, 0, 0, 1, -50, -155) !important;
-                }
-            }
-        }
-    }
-    .about-us{
-        .show-case{
-            .offset-2{
-                margin-right: 0;
-            }
             .image{
-                img{
-                    left: 40px;
-                }
-            }
-        }
-    }
-    .features{
-        height: 430px;
-        .overlay{
-            .feature{
-                .content{
-                    margin-right: 15px;
-                    .title{
-                        margin-bottom: 10px;
-                        font-size: 14pt;
-                    }
-                }
-            }
-            .col-img{
-                img{
-                    width: 150%;
-                    left: 80px;
-                    position: relative;
-                }
+                left: -9%;
             }
         }
     }
@@ -1103,7 +928,6 @@ html[dir = "ltr"]{
 }
 @media (max-width: 575.98px){
     .header{
-        height: 65vh;
         .navbar{
             .navbar-brand{
                 right: 32%;
@@ -1123,65 +947,91 @@ html[dir = "ltr"]{
         }
         .overlay{
             padding-right: 0;
+            left: 0;
+            top: 170px;
             .row{
                 --bs-gutter-x: 0rem;
-                .col-sm-6{
-                    padding: 0;
-                    .caption{
-                        padding-inline: 20px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        .text{
-                            text-align: center;
-                            font-size: 17px;
-                        }
+                justify-content: center !important;
+                .caption{
+                    text-align: center;
+                    .text{
+                        padding-left: 0;
+                        font-size: 17pt;
                     }
                 }
-                .mob{
+                .image{
                     display: none !important;
                 }
             }
         }
     }
     .about-us{
+        .title{
+            padding-right: 60px;
+            .shape{
+                right: 88px;
+            }
+        }
         .show-case{
+            padding-inline: 50px;
             .image{
+                left: 45px;
                 img{
-                    left: 125px;
+                    width: 530px;
                 }
             }
         }
     }
+    .features{
+        &>.title{
+            padding-right: 50px;
+            .shape{
+                right: 110px;
+            }
+        }
+        .overlay{
+            height: 175px;
+            img{
+                height: 475px;
+            }
+        }
+        .show-case{
+            .feature{
+                .content{
+                    width: 290px;
+                    .title{
+                        font-size: 16pt;
+                    }
+                    .text{
+                        font-size: 12pt;
+                    }
+                }
+            }    
+        }
+    }
     .sections{
+        .title{
+            padding-right: 55px;
+            .shape{
+                right: 95px;
+            }
+        }
         .show-case{
             padding-inline: 25px;
         }
     }
-    .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        &::before  , &::after{
-            width: 17%;
-        }
-    }
-    .features{
-        height: 388px;
-        .overlay{
-            .feature{
-                .content{
-                    margin-right: 7px;
-                    .text{
-                        font-size: 10pt;
-                    }
-                }
+    .screen-app{
+        .title{
+            margin-bottom: 300px;
+            padding-right: 50px;
+            .shape{
+                right: 110px;
             }
         }
-    }
-    .screen-app{
         .screen-img{
             bottom: 187px;
-            width: 644px;
-            height: 1315px;
+            width: 671px;
+            height: 1284px;
         }
     }
     .app{
@@ -1223,8 +1073,7 @@ html[dir = "ltr"]{
         .navbar{
             padding-inline: 15px;
             .navbar-brand{
-                width: 60px;
-                right: 24%;
+                right: 15%;
             }
             .navbar-toggler{
                 width: 60px;
@@ -1244,85 +1093,70 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            .caption{
-                .title{
-                    h3{
-                        font-size: 12pt;
+            .row{
+                .caption{
+                    .text{
+                        font-size: 13pt;
+                        font-weight: bold;
                     }
-                }
+                }    
             }
         }
     }
     .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        font-size: 25px !important;
-        &::before , &::after{
-            content: initial;
+        justify-content: center;
+        padding-inline: 0;
+        .shape{
+            right: initial;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
         }
     }
     .about-us{
-        padding-top: 120px;
         .show-case{
-            padding-inline: 50px;
-            .title{
-                margin-bottom: 0;
-            }
-            .text{
-                margin-top: 0;
-            }
+            padding-inline: 20px;
             .image{
+                left: 50px;
                 img{
-                    left: 100px;
-                    width: 75%;
+                    width: 400px;
                 }
             }
         }
     }
     .features{
-        height: 270px;
         .overlay{
-            padding: 40px 0 0 0;
-            .title{
-                font-size: 15pt;
+            height: 130px;
+            img{
+                height: 350px;
             }
-            .col-img{
-                img{
-                    top: 10px;
-                    left: 45px;
-                }
-            }
+        }
+        .show-case{
+            margin-top: 530px;
             .feature{
                 .content{
-                    margin-bottom: 0;
+                    width: 160px;
                     .title{
-                        font-size: 10pt;
+                        font-size: 12pt;
+                        margin-bottom: 6px;
                     }
                     .text{
-                        font-size: 8pt;
-                        margin-bottom: 20px;
+                        font-size: 10pt;
                     }
                 }
-                .image{
-                    width: 60px;
-                    height: 60px;
-                    img{
-                        width: 25px;
-                    }
-                }
-            }
-            .feature + .feature{
-                margin-top: 0px;
             }
         }
     }
     .sections{
         .show-case{
             padding-inline: 10px;
-            .sub{
-                .title{
-                    font-size: 15pt;
-                }
-                .text{
-                    font-size: 11pt;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            .section{
+                img{
+                    width: 100%;
                 }
             }
         }
@@ -1335,7 +1169,7 @@ html[dir = "ltr"]{
         }
         .buttons{
             .btn{
-                width: 160px;
+                width: 145px;
                 span{
                     font-size: 14pt;
                 }
@@ -1356,8 +1190,8 @@ html[dir = "ltr"]{
         .navbar{
             padding-inline: 10px;
             .navbar-brand{
-                width: 60px;
-                right: 20%;
+                top: 65px;
+                right: 11%;
             }
             .navbar-toggler{
                 width: 60px;
@@ -1379,24 +1213,23 @@ html[dir = "ltr"]{
         }
         .overlay{
             .caption{
-                margin-right: 0;
                 .title{
                     h3{
-                        font-size: 10pt;
+                        font-size: 18pt;
                     }
                 }
                 .text{
-                    font-size: 10px !important;
+                    font-size: 12pt !important;
                     font-weight: bold !important;
                 }
                 .buttons{
                     .btn{
-                        width: 110px !important;
+                        width: 125px !important;
                         span{
-                            font-size: 9pt;
+                            font-size: 12pt;
                         }
                         img{
-                            width: 15px;
+                            width: 18px;
                         }
                     }
                 }
@@ -1404,87 +1237,71 @@ html[dir = "ltr"]{
         }
     }
     .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-        font-size: 25px !important;
-        &::before , &::after{
-            content: initial;
+        justify-content: center;
+        padding-inline: 0;
+        .shape{
+            left: initial;
+            right: 50%;
+            transform: translateX(50%);
+            -webkit-transform: translateX(50%);
+            -moz-transform: translateX(50%);
+            -ms-transform: translateX(50%);
+            -o-transform: translateX(50%);
         }
     }
     .about-us{
-        padding-top: 200px;
         .show-case{
-            padding-inline: 40px;
-            .title{
-                margin-bottom: 0;
-            }
-            .text{
-                margin-top: 0;
-            }
+            padding-inline: 10px;
             .image{
+                left: 30px;
                 img{
-                    left: 127px;
-                    width: 75%;
+                    width: 275px;
                 }
             }
         }
     }
     .features{
-        height: 245px;
         .overlay{
-            padding: 40px 0 0 0;
-            .title{
-                font-size: 15pt;
+            height: 90px;
+            img{
+                height: 240px;
             }
-            .col-img{
-                img{
-                    top: 10px;
-                    left: 45px;
-                }
-            }
+        }
+        .show-case{
+            margin-top: 430px;
             .feature{
+                .image{
+                    width: 85px;
+                }
                 .content{
-                    margin-bottom: 0;
+                    width: 140px;
                     .title{
-                        font-size: 6pt;
+                        font-size: 11pt;
+                        margin-bottom: 6px;
                     }
                     .text{
-                        font-size: 6pt;
-                        margin-bottom: 20px;
+                        font-size: 10pt;
                     }
                 }
-                .image{
-                    width: 60px;
-                    height: 60px;
-                    img{
-                        width: 25px;
-                    }
-                }
-            }
-            .feature + .feature{
-                margin-top: 0px;
             }
         }
     }
     .sections{
         .show-case{
-            padding-inline: 0;
-            .sub{
-                .title{
-                    font-size: 15pt;
+            padding-inline: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            .section{
+                img{
+                    width: 100%;
                 }
-                .text{
-                    font-size: 9pt;
-                }
-            }
-            .products{
-                width: 96%;
             }
         }
     }
     .screen-app{
         .screen-img{
             bottom: 229px;
-            width: 318px;
-            height: 611px;
+            width: 301px;
+            height: 610px;
         }
     }
     .app{
@@ -1495,9 +1312,12 @@ html[dir = "ltr"]{
         }
         .buttons{
             .btn{
-                width: 120px;
+                width: 110px;
                 span{
-                    font-size: 9pt;
+                    font-size: 10pt;
+                }
+                img{
+                    width: 13px;
                 }
             }
         }
@@ -1541,18 +1361,19 @@ html[dir = "ltr"]{
             .overlay{
                 .caption{
                     .text{
-                        padding-right: 55px;
+                        padding-right: 100px;
                         padding-left: 0;
                     }
                 }
-                .mob{
-                    img{
-                        transform: matrix(3, 0, 0, 1, -38, -270);
-                        -webkit-transform: matrix(3, 0, 0, 1, -38, -270);
-                        -moz-transform: matrix(3, 0, 0, 1, -38, -270);
-                        -ms-transform: matrix(3, 0, 0, 1, -38, -270);
-                        -o-transform: matrix(3, 0, 0, 1, -38, -270);
-                    }
+            }
+        }
+        .about-us{
+            .title{
+                padding-left: 145px;
+                padding-right: 0;
+                .shape{
+                    left: 175px;
+                    right: initial;
                 }
             }
         }
@@ -1568,21 +1389,20 @@ html[dir = "ltr"]{
                     margin-left: 30px !important;
                 }
             }
-            .overlay{
-                padding-right: 0;
-                padding-left: 98px;
-                .caption{
-                    padding-right: 0;
-                    padding-left: 25px;
+        }
+        .about-us{
+            .title{
+                padding-left: 120px;
+                .shape{
+                    left: 150px;
+                    right: initial;
                 }
-                .mob{
-                    img{
-                        transform: matrix(3, 0, 0, 1, -100, -260);
-                        -webkit-transform: matrix(3, 0, 0, 1, -100, -260);
-                        -moz-transform: matrix(3, 0, 0, 1, -100, -260);
-                        -ms-transform: matrix(3, 0, 0, 1, -100, -260);
-                        -o-transform: matrix(3, 0, 0, 1, -100, -260);
-                    }
+            }
+            .show-case{
+                .image{
+                    position: relative;
+                    right: 70px;
+                    left: initial;
                 }
             }
         }
@@ -1599,24 +1419,23 @@ html[dir = "ltr"]{
                 }
             }
             .overlay{
-                padding-right: 0;
-                padding-left: 60px;
                 .caption{
-                    padding-left: 10px;
-                    padding-right: 0;
                     .text{
                         padding-left: 0;
-                        padding-right: 5px;
+                        padding-right: 30px;
                     }
                 }
-                .mob{
-                    img{
-                        transform: matrix(3, 0, 0, 1, 17, -232);
-                        -webkit-transform: matrix(3, 0, 0, 1, 17, -232);
-                        -moz-transform: matrix(3, 0, 0, 1, 17, -232);
-                        -ms-transform: matrix(3, 0, 0, 1, 17, -232);
-                        -o-transform: matrix(3, 0, 0, 1, 17, -232);
-                    }
+                .image{
+                    right: 5%;
+                    left: initial;
+                }
+            }
+        }
+        .about-us{
+            .show-case{
+                .text{
+                    padding-left: 0;
+                    padding-right: 0;
                 }
             }
         }
@@ -1625,46 +1444,18 @@ html[dir = "ltr"]{
 @media (min-width: 992px) and (max-width: 1025px){
     html[dir = "ltr"]{
         .header{
-            height: 82vh;
             .navbar{
                 padding: 35px 50px 0 20px ; 
             }
-            .overlay{
-                padding-right: 0;
-                padding-left: 20px;
-                margin-right: 0;
-                margin-left: 5px;
-                .caption{
-                    padding-right: 0;
-                    padding-left: 3px;
-                    .text{
-                        padding-left: 0;
-                        padding-right: 15pt;
-                    }
-                }
-                .mob{
-                    img{
-                        transform: matrix(2, 0, 0, 1, -35, -210);
-                        -moz-transform: matrix(2, 0, 0, 1, -35, -210);
-                        -ms-transform: matrix(2, 0, 0, 1, -35, -210);
-                        -o-transform: matrix(2, 0, 0, 1, -35, -210);
-                        -webkit-transform: matrix(2, 0, 0, 1, -35, -210);
-                        width: 68%;
-                        height: 700px;
-                    }
-                }
-            }
-        }
-        .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-            font-size: 30px !important; 
-            &::before  , &::after{
-                top: 35px !important;
-            }
         }
         .about-us{
-            .show-case{
-                padding-right: 110px;
-                padding-left: 50px;
+            .title{
+                padding-left: 60px;
+                padding-right: 0;
+                .shape{
+                    right: initial;
+                    left: 85px;
+                }
             }
         }
     }
@@ -1675,7 +1466,7 @@ html[dir = "ltr"]{
             .navbar{
                 .navbar-brand{
                     right: initial;
-                    left: 30%;
+                    left: 40%;
                 }
                 .navbar-toggler{
                     left: initial;
@@ -1697,11 +1488,9 @@ html[dir = "ltr"]{
                 }
             }
             .overlay{
-                padding-right: 0 ;
-                padding-left: 85px;
+                right: -90px;
+                left: initial;
                 .caption{
-                    padding-left: 0;
-                    padding-right: 0;
                     .buttons{
                         .android{
                             margin-right: 0 ;
@@ -1709,29 +1498,9 @@ html[dir = "ltr"]{
                         }
                     }
                 }
-                .mob{
-                    img{
-                        transform:matrix(2, 0, 0, 1, 15, -220);
-                        -moz-transform:matrix(2, 0, 0, 1, 15, -220);
-                        -ms-transform:matrix(2, 0, 0, 1, 15, -220);
-                        -o-transform:matrix(2, 0, 0, 1, 15, -220);
-                        -webkit-transform:matrix(2, 0, 0, 1, 15, -220);
-                        width: 92%;
-                    }
-                }
-            }
-        }
-        .about-us{
-            .show-case{
                 .image{
-                    img{
-                        left: initial;
-                        right: 155px;
-                        top: -63px !important;
-                    }
-                }
-                .text{
-                    margin-top: 100px;
+                    right: 0;
+                    left: initial;
                 }
             }
         }
@@ -1744,8 +1513,7 @@ html[dir = "ltr"]{
                 padding-inline: 22px;
                 .navbar-brand{
                     right: initial;
-                    left: 35%;
-                    top: 30px;
+                    left: 28%;
                 }
                 .navbar-nav{
                     .dropdown{
@@ -1760,13 +1528,9 @@ html[dir = "ltr"]{
                 }
             }
             .overlay{
-                padding-right: 0;
-                padding-left: 30px;
+                right: 10px;
+                left: initial;
                 .caption{
-                    padding-left: 0;
-                    padding-right: 0;
-                    margin-right: 0;
-                    margin-left: 35px;
                     .buttons{
                         .android{
                             margin-right: 0;
@@ -1774,30 +1538,10 @@ html[dir = "ltr"]{
                         }
                     }
                 }
-                .mob{
-                    img{
-                        height: 440px !important;
-                        width: 125% !important;
-                        transform:matrix(1, 0, 0, 1, -45, -160);
-                        -webkit-transform:matrix(1, 0, 0, 1, -45, -160);
-                        -moz-transform:matrix(1, 0, 0, 1, -45, -160);
-                        -ms-transform:matrix(1, 0, 0, 1, -45, -160);
-                        -o-transform:matrix(1, 0, 0, 1, -45, -160);
-                    }
-                }
-            }
-        }
-        .about-us{
-            .offset-2{
-                margin-left: 6.666667% ; 
-                margin-right: 0;
-            }
-            .show-case{
                 .image{
-                    img{
-                        left: initial;
-                        right: 130px;
-                    }
+                    width: 67%;
+                    top: 53%;
+                    right: -30px;
                 }
             }
         }
@@ -1807,50 +1551,11 @@ html[dir = "ltr"]{
     html[dir = "ltr"]{
         .header{
             .overlay{
-                .caption{
-                    margin-right: 0;
-                    margin-left: 20px;
-                }
-                .mob{
-                    img{
-                        width: 160% !important;
-                        transform:   matrix(1, 0, 0, 1, 50, -155)   !important;
-                        -webkit-transform:   matrix(1, 0, 0, 1, 50, -155)   !important;
-                        -moz-transform:   matrix(1, 0, 0, 1, 50, -155)   !important;
-                        -ms-transform:   matrix(1, 0, 0, 1, 50, -155)   !important;
-                        -o-transform:   matrix(1, 0, 0, 1, 50, -155)   !important;
-                    }
-                }
-            }
-        }
-        .about-us{
-            .show-case{
-                .offset-2{
-                    margin-right: 0;
-                    margin-left: 0;
-                }
+                right: -70px;
+                left: initial;
                 .image{
-                    img{
-                        left: initial;
-                        right: 40px;
-                    }
-                }
-            }
-        }
-        .features{
-            height: 410px;
-            .overlay{
-                .feature{
-                    .content{
-                        margin-right: 0;
-                        margin-left: 15px;
-                    }
-                }
-                .col-img{
-                    img{
-                        left: initial;
-                        right: 80px;
-                    }
+                    right: -14%;
+                    left: initial;
                 }
             }
         }
@@ -1889,29 +1594,68 @@ html[dir = "ltr"]{
             .overlay{
                 padding-right: 0;
                 padding-left: 0;
+                right: 0;
+                left: initial;
                 .row{
                     --bs-gutter-x: 0rem;
+                    .caption{
+                        padding-right: 0;
+                        padding-left: 0;
+                        .text{
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
                 }
             }
         }
         .about-us{
+            .title{
+                padding-right: 0;
+                padding-left: 60px;
+                .shape{
+                    right: initial;
+                    left: 88px;
+                }
+            }
             .show-case{
+                padding-inline: 50px;
                 .image{
+                    left: initial;
+                    right: 45px;
                     img{
-                        left: initial;
-                        right: 125px;
+                        width: 530px;
                     }
                 }
             }
         }
         .features{
-            height: 388px;
-            .overlay{
-                .feature{
-                    .content{
-                        margin-left: 7px;
-                        margin-right: 0;
-                    }
+            &>.title{
+                padding-right: 0;
+                padding-left: 50px;
+                .shape{
+                    right: initial;
+                    left: 110px;
+                }
+            }
+        }
+        .sections{
+            .title{
+                padding-right: 0;
+                padding-left: 55px;
+                .shape{
+                    right: initial;
+                    left: 95px;
+                }
+            }
+        }
+        .screen-app{
+            .title{
+                padding-right: 0;
+                padding-left: 50px;
+                .shape{
+                    right: initial;
+                    left: 110px;
                 }
             }
         }
@@ -1948,7 +1692,7 @@ html[dir = "ltr"]{
             .navbar{
                 .navbar-brand{
                     right: initial;
-                    left: 24%;
+                    left: 15%;
                 }
                 .navbar-toggler{
                     left: initial;
@@ -1966,39 +1710,25 @@ html[dir = "ltr"]{
             }
         }
         .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-            font-size: 25px !important;
-            &::before , &::after{
-                content: initial;
+            justify-content: center;
+            padding-inline: 0;
+            .shape{
+                left: initial;
+                right: 50%;
+                transform: translateX(50%);
+                -webkit-transform: translateX(50%);
+                -moz-transform: translateX(50%);
+                -ms-transform: translateX(50%);
+                -o-transform: translateX(50%);
             }
         }
         .about-us{
             .show-case{
                 .image{
+                    right: 75px;
+                    left: initial;
                     img{
-                        left: initial;
-                        right: 100px;
-                    }
-                }
-            }
-        }
-        .features{
-            height: 253px;
-            .overlay{
-                .col-img{
-                    img{
-                        left: initial;
-                        right: 45px;
-                    }
-                }
-                .feature{
-                    .content{
-                        .text{
-                            font-size: 7pt;
-                        }
-                        .title{
-                            font-size: 9pt;
-                        }
-                        margin-right: 8px;
+                        width: 400px;
                     }
                 }
             }
@@ -2006,7 +1736,7 @@ html[dir = "ltr"]{
         .app{
             .buttons{
                 .btn{
-                    width: 160px;
+                    width: 145px;
                     span{
                         font-size: 14pt;
                     }
@@ -2027,7 +1757,7 @@ html[dir = "ltr"]{
                 padding-right: 5px;
                 .navbar-brand{
                     right: initial;
-                    left: 20%;
+                    left: 11%;
                 }
                 .navbar-toggler{
                     left: initial;
@@ -2043,44 +1773,28 @@ html[dir = "ltr"]{
                     }
                 }
             }
-            .overlay{
-                .caption{
-                    margin-left: 0;
-                    margin-right: 0;
-                }
-            }
         }
         .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
-            font-size: 25px !important;
-            &::before , &::after{
-                content: initial;
+            justify-content: center;
+            padding-inline: 0;
+            .shape{
+                left: initial;
+                right: 50%;
+                transform: translateX(50%);
+                -webkit-transform: translateX(50%);
+                -moz-transform: translateX(50%);
+                -ms-transform: translateX(50%);
+                -o-transform: translateX(50%);
             }
         }
         .about-us{
             .show-case{
+                padding-inline: 10px;
                 .image{
+                    left: initial;
+                    right: 30px;
                     img{
-                        left: initial;
-                        right: 120px;
-                    }
-                }
-                .text{
-                    padding-left: 14px;
-                }
-            }
-        }
-        .features{
-            height: 259px;
-            .overlay{
-                .col-img{
-                    img{
-                        left: initial;
-                        right: 45px;
-                    }
-                }
-                .feature{
-                    .content{
-                        margin-right: 12px;
+                        width: 275px;
                     }
                 }
             }
@@ -2088,15 +1802,12 @@ html[dir = "ltr"]{
         .app{
             .buttons{
                 .btn{
-                    width: 120px;
-                    padding-block: 3px;
-                    padding-inline: 2px;
-                    line-height: 20px;
+                    width: 110px;
                     img{
-                        width: 14px;
+                        width: 13px;
                     }
                     span{
-                        font-size: 9pt;
+                        font-size: 10pt;
                     }
                 }
             }
@@ -2114,35 +1825,23 @@ html[dir = "ltr"]{
 @media (min-width: 972px) and (max-width: 972px){
     .header{
         .overlay{
-            padding-right: 72px;
-            .mob{
-                img{
-                    width: 90% ;
-                }
+            .image{
+                width: 55%;
             }
         }
     }
 }
 @media (min-width: 912px) and (max-width: 913px){
     .header{
-        height: 69vh;
         .overlay{
-            .caption{
-                .text{
-                    margin-bottom: 25px;
-                }
-            }
-            .mob{
-                img{
-                    width: 70%;
-                }
+            .image{
+                width: 58%;
             }
         }
     }
 }
 @media (min-width: 820px) and (max-width: 820px){
     .header{
-        height: 62vh ;
         .navbar{
             .navbar-nav{
                 .dropdown{
@@ -2157,25 +1856,28 @@ html[dir = "ltr"]{
             }  
         } 
         .overlay{
-            top: 157px;
-            .caption{
-                .title{
-                    margin-bottom: 12px;
-                }
-                .text{
-                    margin-bottom: 20px;
-                    font-size: 12pt;
-                }
+            left: 14px;
+            .image{
+                width: 63%;
             }
-            .mob{
-                img{
-                    width: 136%;
-                    height: 539px;
-                    transform: matrix(1, 0, 0, 1, 64, -170);
-                    -webkit-transform: matrix(1, 0, 0, 1, 64, -170);
-                    -moz-transform: matrix(1, 0, 0, 1, 64, -170);
-                    -ms-transform: matrix(1, 0, 0, 1, 64, -170);
-                    -o-transform: matrix(1, 0, 0, 1, 64, -170);
+        }
+    }
+    .about-us{
+        .show-case{
+            .image{
+                left: 120px ;
+            }
+        }
+    }
+    .features{
+        .show-case{
+            .feature{
+                justify-content: center;
+                .content{
+                    width: 400px;
+                }
+                &:nth-child(even){
+                    justify-content: center;
                 }
             }
         }
@@ -2192,22 +1894,39 @@ html[dir = "ltr"]{
     }
 }
 @media (min-width: 540px) and (max-width: 541px){
+    .sections{
+        .show-case{
+            .section{
+                img{
+                    width: 98%;
+                }
+            }
+        }
+    }
     .screen-app{
         .screen-img{
             bottom: 191px;
-            width: 644px;
+            width: 626px;
             height: 1235px;
         }
     }
     .app{
         .buttons{
             .btn{
-                width: 155px;
+                width: 140px;
+                font-size: 14pt;
             }
         }
     }
 }
 @media (min-width: 412px) and (max-width: 415px){
+    .about-us{
+        .show-case{
+            .image{
+                left: 15px;
+            }
+        }
+    }
     .screen-app{
         .screen-img{
             bottom: 209px;
@@ -2216,46 +1935,17 @@ html[dir = "ltr"]{
         }
     }
 }
-@media (min-width: 412px) and (max-width: 413px){
-    .features{
-        height: 263px;
-    }
-}
-@media (min-width: 414px) and (max-width: 415px){
-    .features{
-        height: 263px;
-    }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 123px !important;
-                }
-            }
-        }
-    }
-}
+
 @media (min-width: 390px) and (max-width: 394px){
-    .features{
-        height: 263px ;
-    }
     .screen-app{
         .screen-img{
             bottom: 209px;
             width: 464px;
-            height: 887px;
+            height: 880px;
         }
     }
 }
-@media (min-width: 390px) and (max-width: 391px){
-    .features{
-        height: 264px;
-    }
-}
 @media (min-width: 375px) and (max-width: 376px){
-    .features{
-        height: 262px;
-    }
     .screen-app{
         .screen-img{
             bottom: 215px;
@@ -2288,17 +1978,10 @@ html[dir = "ltr"]{
 @media (min-width: 912px) and (max-width: 913px){
     html[dir = "ltr"]{
         .header{
-            height: 69vh;
             .overlay{
-                .caption{
-                    .text{
-                        margin-bottom: 25px;
-                    }
-                }
-                .mob{
-                    img{
-                        width: 70%;
-                    }
+                right: -45px;
+                .image{
+                    right: -45px;
                 }
             }
         }
@@ -2321,15 +2004,18 @@ html[dir = "ltr"]{
                 }  
             } 
             .overlay{
-                .mob{
-                    img{
-                        width: 136%;
-                        transform: matrix(1, 0, 0, 1, -64, -170);
-                        -webkit-transform: matrix(1, 0, 0, 1, -64, -170);
-                        -moz-transform: matrix(1, 0, 0, 1, -64, -170);
-                        -ms-transform: matrix(1, 0, 0, 1, -64, -170);
-                        -o-transform: matrix(1, 0, 0, 1, -64, -170);
-                    }
+                right: -14px;
+                left: initial;
+                .image{
+                    right: -30px;
+                }
+            }
+        }
+        .about-us{
+            .show-case{
+                .image{
+                    right: 120px ;
+                    left: initial;
                 }
             }
         }
@@ -2351,39 +2037,23 @@ html[dir = "ltr"]{
         .app{
             .buttons{
                 .btn{
-                    width: 155px;
+                    width: 140px;
                 }
             }
         }
     }
 }
-@media (min-width: 412px) and (max-width: 413px){
+@media (min-width: 412px) and (max-width: 415px){
     html[dir = "ltr"]{
-        .features{
-            height: 263px;
+        .about-us{
+            .show-case{
+                .image{
+                    left: initial;
+                    right: 50px;
+                }
+            }
         }
     }    
-}
-@media (min-width: 414px) and (max-width: 415px){
-    html[dir = "ltr"]{
-        .features{
-            height: 263px;
-        }
-    }    
-}
-@media (min-width: 393px) and (max-width: 394px){
-    html[dir = "ltr"]{
-        .features{
-            height: 254px;
-        }
-    }    
-}
-@media (min-width: 375px) and (max-width: 376px){
-    html[dir = "ltr" ]{
-        .features{
-            height: 253px;
-        }
-    }
 }
 
 
