@@ -508,8 +508,13 @@ html, body {
   gap: 50px;
 }
 
+.sections .show-case .section {
+  height: 260px;
+}
+
 .sections .show-case .section img {
   width: 100%;
+  height: 100%;
 }
 
 .screen-app {
@@ -1278,8 +1283,12 @@ html[dir="ltr"] .footer .items .item img {
     -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
+  .sections .show-case .section {
+    height: 200px;
+  }
   .sections .show-case .section img {
     width: 100%;
+    height: 100%;
   }
   .app {
     -webkit-box-orient: vertical;
@@ -1400,8 +1409,12 @@ html[dir="ltr"] .footer .items .item img {
     -ms-grid-columns: (minmax(220px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
+  .sections .show-case .section {
+    height: 140px;
+  }
   .sections .show-case .section img {
     width: 100%;
+    height: 100%;
   }
   .screen-app .screen-img {
     bottom: 229px;

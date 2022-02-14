@@ -284,8 +284,10 @@ html , body{
         grid-template-columns: repeat(auto-fill , minmax(500px , 1fr));
         gap: 50px;
         .section{
+            height: 260px;
             img{
                 width: 100%;
+                height: 100%;
             }
         }
     }
@@ -1155,8 +1157,10 @@ html[dir = "ltr"]{
             padding-inline: 10px;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             .section{
+                height: 200px;
                 img{
                     width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -1291,8 +1295,10 @@ html[dir = "ltr"]{
             padding-inline: 10px;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             .section{
+                height: 140px;
                 img{
                     width: 100%;
+                    height: 100%;
                 }
             }
         }
