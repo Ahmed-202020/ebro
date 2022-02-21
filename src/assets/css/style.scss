@@ -284,10 +284,63 @@ html , body{
         grid-template-columns: repeat(auto-fill , minmax(500px , 1fr));
         gap: 50px;
         .section{
+            position: relative;
             height: 260px;
             img{
                 width: 100%;
                 height: 100%;
+            }
+            .overlay{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 10%;
+                display: flex;
+                align-items: center;
+                span{
+                    font-weight: bold;
+                    font-size: 22pt;
+                    margin-right: 50px;
+                }
+                .text-building{
+                    color: $min-color;
+                }
+                .text-cars{
+                    color: $min-color-2;
+                }
+                .bg{
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    text-align: center;
+                    line-height: 130px;
+                    background-color: transparent;
+                    img{
+                        width: 70px;
+                    }
+                }
+                .building{
+                    background-image: linear-gradient($min-color , $button-color);
+                }
+                .car{
+                    background-image: linear-gradient($min-color-2 , $button-color-2);
+                }
+                // .build{
+                //     background-color: $button-color;
+                //     border-radius: 50%;
+                //     -webkit-border-radius: 50%;
+                //     -moz-border-radius: 50%;
+                //     -ms-border-radius: 50%;
+                //     -o-border-radius: 50%;
+                //     width: 100px;
+                //     height: 100px;
+                // }
+                // justify-content: center;
             }
         }
     }
@@ -522,6 +575,22 @@ html[dir = "ltr"]{
             .shape{
                 right: initial;
                 left: 138px;
+            }
+        }
+        img{
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+        }
+        .overlay{
+            top: 0;
+            right: initial;
+            left: 10%;
+            span{
+                margin-left: 50px;
+                margin-right: 0px;
             }
         }
     }
@@ -1299,6 +1368,16 @@ html[dir = "ltr"]{
                 img{
                     width: 100%;
                     height: 100%;
+                }
+                .overlay{
+                    .bg{
+                        width: 90px;
+                        height: 90px;
+                        line-height: 90px;
+                        img{
+                            width: 50px;
+                        }
+                    }
                 }
             }
         }

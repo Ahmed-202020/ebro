@@ -509,12 +509,68 @@ html, body {
 }
 
 .sections .show-case .section {
+  position: relative;
   height: 260px;
 }
 
 .sections .show-case .section img {
   width: 100%;
   height: 100%;
+}
+
+.sections .show-case .section .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sections .show-case .section .overlay span {
+  font-weight: bold;
+  font-size: 22pt;
+  margin-right: 50px;
+}
+
+.sections .show-case .section .overlay .text-building {
+  color: #e6d938;
+}
+
+.sections .show-case .section .overlay .text-cars {
+  color: #088081;
+}
+
+.sections .show-case .section .overlay .bg {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-align: center;
+  line-height: 130px;
+  background-color: transparent;
+}
+
+.sections .show-case .section .overlay .bg img {
+  width: 70px;
+}
+
+.sections .show-case .section .overlay .building {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6d938), to(#b7ac20));
+  background-image: linear-gradient(#e6d938, #b7ac20);
+}
+
+.sections .show-case .section .overlay .car {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#088081), to(#00a2a3));
+  background-image: linear-gradient(#088081, #00a2a3);
 }
 
 .screen-app {
@@ -759,6 +815,25 @@ html[dir="ltr"] .features .show-case .feature .content {
 html[dir="ltr"] .sections .title .shape {
   right: initial;
   left: 138px;
+}
+
+html[dir="ltr"] .sections img {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+html[dir="ltr"] .sections .overlay {
+  top: 0;
+  right: initial;
+  left: 10%;
+}
+
+html[dir="ltr"] .sections .overlay span {
+  margin-left: 50px;
+  margin-right: 0px;
 }
 
 html[dir="ltr"] .app .buttons .android {
@@ -1415,6 +1490,14 @@ html[dir="ltr"] .footer .items .item img {
   .sections .show-case .section img {
     width: 100%;
     height: 100%;
+  }
+  .sections .show-case .section .overlay .bg {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+  }
+  .sections .show-case .section .overlay .bg img {
+    width: 50px;
   }
   .screen-app .screen-img {
     bottom: 229px;
